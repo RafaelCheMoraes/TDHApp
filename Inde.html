@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDH App</title>
+  <style>
+    /* CSS Interno */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    header img {
+      width: 50px;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    iframe {
+      width: 80%;
+      height: 400px;
+      border: none;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML Interno -->
+  <header>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...==" alt="Logo">
+    <h1>TDH App</h1>
+  </header>
+  <main>
+    <h2>Bem-vindo ao TDH App!</h2>
+    <p>Veja as novidades abaixo:</p>
+    <iframe src="https://www.canva.com/design/DAFk1BxjNtI/view"></iframe>
+    <br><br>
+    <button onclick="playAlert()">Toque o Alerta</button>
+  </main>
+  <script>
+    // JavaScript Interno
+    function playAlert() {
+      const audio = new Audio('data:audio/wav;base64,UklGRu4AAABXQVZFZ...'); // Som embutido
+      audio.play();
+    }
+  </script>
+</body>
+</html>
