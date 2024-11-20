@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas para TDAH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+        .logo {
+            margin-top: 20px;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bem-vindo ao TDHApp</h1>
+    <img src="logo.png" alt="TDHApp Logo" class="logo">
+
+    <div class="container">
+        <div class="box">
+            <h2>Planilha de Gastos Mensais</h2>
+            <table id="gastos">
+                <tr>
+                    <th>Categoria</th>
+                    <th>Valor Recebido</th>
+                    <th>Valor Gastos</th>
+                    <th>Saldo Restante</th>
+                </tr>
+                <tr>
+                    <td>Salário Líquido</td>
+                    <td>R$ 5000.00</td>
+                    <td></td>
+                    <td>R$ 5000.00</td>
+                </tr>
+                <tr>
+                    <td>Poupança/Emergência</td>
+                    <td></td>
+                    <td>R$ 1000.00</td>
+                    <td>R$ 4000.00</td>
+                </tr>
+                <tr>
+                    <td>Financiamento/Aluguel</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Luz</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Água</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Gás</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Alimentação Fixa</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Internet/Telefone/TV</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Transporte</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Alimentação Semanal</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Lazer</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <button onclick="addExpense()">Adicionar Despesa</button>
+            <p id="alert" class="alert" style="display: none;">Atenção: Gastos excessivos!</p>
+        </div>
+
+        <div class="box">
+            <h2>Checklist de Tarefas Diárias</h2>
+            <table id="checklist">
+                <tr>
+                    <th>Horário</th>
+                    <th>Tarefa</th>
+                    <th>Prioridade</th>
+                    <th>Concluída</th>
+                </tr>
+                <tr>
+                    <td>22:00</td>
+                    <td>Dormir</td>
+                    <td>Alta</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>06:00</td>
+                    <td>Acordar</td>
+                    <td>Alta</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>08:00</td>
+                    <td>Comer</td>
+                    <td>Média</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>Trabalhar</td>
+                    <td>Alta</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>17:00</td>
+                    <td>Atividade Física</td>
+                    <td>Média</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>08:30</td>
+                    <td>Saída para Trabalho/Curso</td>
+                    <td>Alta</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Tarefa Extra 1</td>
+                    <td>Baixa</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Tarefa Extra 2</td>
+                    <td>Baixa</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Tarefa Extra 3</td>
+                    <td>Baixa</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Tarefa Extra 4</td>
+                    <td>Baixa</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Tarefa Extra 5</td>
+                    <td>Baixa</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+            <button onclick="addTask()">Adicionar Tarefa</button>
+        </div>
+    </div>
+
+    <script>
+        function addExpense() {
+            const table = document.getElementById('gastos');
+            const row = table.insertRow();
+            const catCell = row.insertCell(0);
+            const recCell = row.insertCell(1);
+            const expCell = row.insertCell(2);
+            const balCell = row.insertCell(3);
+
+            const category = prompt('Categoria:');
+            const received = parseFloat(prompt('Valor Recebido:'));
+            const spent = parseFloat(prompt('Valor Gastos:'));
+            const lastBalance = parseFloat(table.rows[table.rows.length - 2].cells[3].innerText.replace('R$', '').trim());
+
+            catCell.innerText = category;
+            recCell.innerText = received ? `R$ ${received.toFixed(2)}` : '';
+            expCell.innerText = spent ? `R$ ${spent.toFixed(2)}` : '';
+            balCell.innerText = `R$ ${(lastBalance + (received || 0) - (spent || 0)).toFixed(2)}`;
+
+            checkExcessiveSpending(lastBalance + (received || 0) - (spent || 0));
+        }
+
+        function checkExcessiveSpending(balance) {
+            const alert = document.getElementById('alert');
+            if (balance < 1000) {
+                alert.style.display = 'block';
+                alertSound();
+            } else {
+                alert.style.display = 'none';
+            }
+        }
+
+        function alertSound() {
+            const audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+            audio.play();
+        }
+
+        function addTask() {
+            const table = document.getElementById('checklist');
+            const row = table.insertRow();
+            const timeCell = row.insertCell(0);
+            const taskCell = row.insertCell(1);
+            const priorityCell = row.insertCell(2);
+            const doneCell = row.insertCell(3);
+
+            const time = prompt('Horário (HH:MM):');
